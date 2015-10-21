@@ -1,0 +1,27 @@
+
+1) Es scheint so zu sein, dass ein Combine Konstrukt komplett ausgewertet wird.
+
+        <combine name="Title/Publisher/Location/Year" value="${title}##${publisher}##${location}##${year}">
+            <data source="021A.a" name="title"/>
+            <data source="033A.n" name="publisher"/>
+            <data source="033A.p" name="location"/>
+            <data source="011@.n" name="year"/>
+        </combine>
+
+        liefert nur dann einen Wert, wenn alle Elemente des Comvine vorhanden sind. Gibt es eine Möglichkeit, das Literal auch dann erstellen zu lassen,
+        wenn nur einzelne Elemente vorhanden sind?
+
+
+        hängt mit dem Einsatz des Attributs flushWith zusammen
+
+        s. dazu examples/swib14/part-1/part-1-gh/simple.morph.formeta.xml
+
+        erst wenn ish sage:
+        <combine name="Publisher/Location/Year" value="${publisher}##${location}##${year}" flushWith="Publisher">
+            <data source="Publisher" name="publisher"/>
+            <data source="Location" name="location"/>
+            <data source="Year" name="year"/>
+
+        </combine>
+
+        flushWith="Publisher" wird die Struktur erstellt, auch wenn Year nicht vorhanden ist.

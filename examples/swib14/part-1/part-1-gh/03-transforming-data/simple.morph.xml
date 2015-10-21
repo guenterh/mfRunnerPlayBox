@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metamorph xmlns="http://www.culturegraph.org/metamorph" version="1">
+
+    <vars>
+        <var name="swissbib_domain" value="http://data.swissbib.ch/resource/"/>
+    </vars>
+
+    <rules>
+
+
+        <data source="021A.a" name="Title"/>
+
+
+        <combine name="Title/Publisher/Location/Year" value="${title}##${publisher}##${location}##${year}">
+            <data source="021A.a" name="title"/>
+            <data source="033A.n" name="publisher"/>
+            <data source="033A.p" name="location"/>
+            <!--<data source="011@.n" name="year"/>-->
+        </combine>
+
+
+
+
+        <!--
+
+        <combine name="Title/Publisher/Location/Year" value="${title}##${publisher}##${location}##${year}">
+            <data source="Title" name="title"/>
+            <data source="Publisher" name="publisher"/>
+            <data source="Location" name="location"/>
+            <data source="Year" name="year"/>
+        </combine>
+        -->
+
+
+
+
+        <!--
+        <data source="033A.n" name="Publisher"/>
+        <data source="033A.p" name="Location"/>
+        <data source="011@.n" name="Year"/>
+        -->
+
+
+
+    </rules>
+</metamorph>

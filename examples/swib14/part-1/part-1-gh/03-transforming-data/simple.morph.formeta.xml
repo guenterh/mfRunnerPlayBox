@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metamorph xmlns="http://www.culturegraph.org/metamorph" version="1">
+
+
+
+    <rules>
+
+
+
+
+
+        <data source="Title" name="title"/>
+
+
+        <combine name="Publisher/Location/Year" value="${publisher}##${location}##${year}" flushWith="Publisher">
+            <data source="Publisher" name="publisher"/>
+            <data source="Location" name="location"/>
+            <data source="Year" name="year"/>
+
+        </combine>
+
+
+
+
+        <!--
+        <data source="033A.n" name="Publisher"/>
+        <data source="033A.p" name="Location"/>
+        <data source="011@.n" name="Year"/>
+        -->
+
+
+
+    </rules>
+</metamorph>
