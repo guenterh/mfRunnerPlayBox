@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metamorph xmlns="http://www.culturegraph.org/metamorph" version="1" entityMarker=".">
+
+
+    <rules>
+
+
+        <data source="032@.a" name="edition"/>
+        <!--
+        <data source="_else" />
+        -->
+
+
+    </rules>
+</metamorph>
